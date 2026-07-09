@@ -1,0 +1,10 @@
+nums = list(map(int, input().split()))
+target = int(input())
+
+d = {}
+
+for i in range(len(nums)):
+    if target - nums[i] in d:
+        print(d[target - nums[i]], i)
+        break
+    d[nums[i]] = i
