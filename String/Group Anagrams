@@ -1,0 +1,13 @@
+from collections import defaultdict
+
+n = int(input())
+
+groups = defaultdict(list)
+
+for _ in range(n):
+    word = input()
+    key = "".join(sorted(word))
+    groups[key].append(word)
+
+for group in groups.values():
+    print(group)
