@@ -1,0 +1,21 @@
+s = input()
+
+word = ""
+result = ""
+
+for ch in s:
+    if ch != " ":
+        word += ch
+    else:
+        if result == "":
+            result = word
+        else:
+            result = word + " " + result
+        word = ""
+
+if result == "":
+    result = word
+else:
+    result = word + " " + result
+
+print(result)
