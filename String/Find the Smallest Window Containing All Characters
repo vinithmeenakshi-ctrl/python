@@ -1,0 +1,18 @@
+ s = input()
+p = input()
+
+ans = ""
+
+for i in range(len(s)):
+    for j in range(i, len(s)):
+        sub = s[i:j+1]
+        ok = True
+        for ch in p:
+            if ch not in sub:
+                ok = False
+                break
+        if ok:
+            if ans == "" or len(sub) < len(ans):
+                ans = sub
+
+print(ans)
