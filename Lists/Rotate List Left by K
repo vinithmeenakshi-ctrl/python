@@ -1,0 +1,9 @@
+n = int(input())
+a = list(map(int, input().split()))
+k = int(input())
+
+k = k % n
+
+a = a[k:] + a[:k]
+
+print(*a)
