@@ -1,0 +1,22 @@
+a=list(map(int,input().split()))
+
+cur=a[0]
+mx=a[0]
+
+for i in range(1,len(a)):
+    cur=max(a[i],cur+a[i])
+    mx=max(mx,cur)
+
+cur=a[0]
+mn=a[0]
+
+for i in range(1,len(a)):
+    cur=min(a[i],cur+a[i])
+    mn=min(mn,cur)
+
+total=sum(a)
+
+if total==mn:
+    print(mx)
+else:
+    print(max(mx,total-mn))
