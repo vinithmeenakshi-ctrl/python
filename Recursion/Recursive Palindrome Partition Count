@@ -1,0 +1,23 @@
+def is_palindrome(s, l, r):
+    if l >= r:
+        return True
+    return s[l] == s[r] and is_palindrome(s, l + 1, r - 1)
+
+def count_partitions(s, start):
+    if start == len(s):
+        return 1
+
+    def helper(end):
+        if end == len(s):
+            return 0
+
+        count = 0
+        if is_palindrome(s, start, end):
+            count = count_partitions(s, end + 1)
+
+        return count + helper(end + 1)
+
+    return helper(start)
+
+s = input().strip()
+print(count_partitions(s, 0))
