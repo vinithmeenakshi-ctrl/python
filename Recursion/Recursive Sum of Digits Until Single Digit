@@ -1,0 +1,12 @@
+def digit_sum(n):
+    if n == 0:
+        return 0
+    return n % 10 + digit_sum(n // 10)
+
+def reduce_to_single(n):
+    if n < 10:
+        return n
+    return reduce_to_single(digit_sum(n))
+
+n = int(input())
+print(reduce_to_single(n))
